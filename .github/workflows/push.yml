@@ -22,7 +22,8 @@ jobs:
       - name: Build and push image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./streamlit-app   # <<--- AQUÍ SE ARREGLA
+          file: ./streamlit-app/Dockerfile   # <<--- Asegura que encuentre el docker file
           push: true
           tags: |
             jesussabalagam/streamlit-app:latest
